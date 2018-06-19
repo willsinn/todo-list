@@ -2,23 +2,16 @@ import React, { Component } from 'react';
 
 class Form extends Component {
 
-  state = {
-    inputValue: "Input Todo"
-  }
-
-  handleChange = (e) => {
-    this.setState({inputValue: e.target.value })
-  }
 
 
 
   render() {
     return(
       <div className="Form">
-        <form>
+        <form onSubmit={(e) => this.props.handleSubmit(e)}>
           <input
-            onChange={(e) => this.handleChange(e)}
-            value={this.state.inputValue}
+            onChange={(e) => this.props.handleChange(e)}
+            value={this.props.inputValue}
           />
         </form>
       </div>

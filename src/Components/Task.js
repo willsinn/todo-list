@@ -7,10 +7,10 @@ class Task extends Component {
   render() {
     return(
       <div className="Task Component">
-        <span>
+        <span style={{ textDecoration: this.props.todo.done ? 'line-through': 'none' }}>
           {this.props.todo.value}
         </span>
-        <button> Click Me </button>
+        <button onClick={this.props.handleClick}> {this.props.todo.done ? 'Undo': 'Complete'} </button>
       </div>
     );
   }
