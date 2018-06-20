@@ -8,23 +8,22 @@ class App extends Component {
 
   state = {
     inputValue: "",
-    todos: [
-      { value: 'Take out trash', done: false },
-      { value: 'Finish portfolio', done: true }
-    ]
+    todos: []
   }
 
 
-    handleChange(e) {
-      this.setState({inputValue: e.target.value })
+    handleChange = (event) => {
+      this.setState({inputValue: event.target.value })
     }
 
-    handleClick() {
-      console.log('button clicked');
+    handleClick = (index) => {
+      const todos = this.state.todos;
+      todos[index].done = !todos[index].done;
+      this.setState({ todos:todos });
     }
 
-    handleSubmit(e) {
-      e.preventDefault();
+    handleSubmit = (event) => {
+      event.preventDefault();
       const newTodo = {
         value: this.state.inputValue,
         done: false
