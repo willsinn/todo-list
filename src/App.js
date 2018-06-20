@@ -16,7 +16,7 @@ class App extends Component {
       this.setState({inputValue: event.target.value })
     }
 
-    handleClick = (index) => {
+    handleCompleteToggle = (index) => {
       const todos = this.state.todos;
       todos[index].done = !todos[index].done;
       this.setState({ todos:todos });
@@ -43,7 +43,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
         />
         <List
-          handleClick={this.handleClick}
+          handleCompleteToggle={this.handleCompleteToggle}
           todos={this.state.todos}
         />
       </div>

@@ -12,7 +12,7 @@ class List extends Component {
              <Task
              key={index}
              index={index}
-             handleClick={this.props.handleClick}
+             handleCompleteToggle={this.props.handleCompleteToggle}
              todo={todo}
              />
           )
